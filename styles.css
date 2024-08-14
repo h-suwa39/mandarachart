@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.breadcrumb li {
+    margin-right: 10px;
+}
+
+.breadcrumb li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumb li::after {
+    content: ">";
+    margin-left: 10px;
+}
+
+.breadcrumb li:last-child::after {
+    content: "";
+}
+
+/* ベースのCSS設定 */
+.mandala-container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 2px;
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
+    margin: auto;
+    border: 2px solid #000;
+}
+
+.mandala-cell {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5vw;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #fff; /* デフォルトは白 */
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.mandala-cell:hover {
+    transform: scale(1.02);
+}
+
+.mandala-row-divider:nth-child(3n) .mandala-cell {
+    border-bottom: 3px solid black; /* 3行ごとの下部に太い境界線 */
+}
+
+.mandala-column-divider:nth-child(3n) .mandala-cell {
+    border-right: 3px solid black; /* 3列ごとの右側に太い境界線 */
+}
+
+/* clickableCells の基本配色 */
+
+/* センターエリア（4,4 ~ 6,6）の配色 */
+.center-area {
+    background-color: #b3d9ff; /* 水色背景 */
+    cursor: pointer;
+}
+
+.center-area:hover {
+    background-color: #99c2ff; /* ホバー時の色 */
+}
+
+.center-area-center {
+    background-color: #99c2ff; /* ホバー時の色 */
+}
+
+
+.highlight {
+    background-color: #b3d9ff; /* 水色背景 */
+    cursor: pointer;
+}
+
+.highlight:hover {
+    background-color: #99c2ff; /* ホバー時の色 */
+}
+
+/* ピンクテーマ */
+.pink-theme .mandala-cell {
+    background-color: #ffe4e1; /* ピンクの背景色 */
+}
+
+.pink-theme .mandala-cell:hover {
+    background-color: #ffcccc; /* ホバー時の少し濃いピンク */
+}
+
+.pink-theme .highlight {
+    background-color: #ff99cc;
+}
+
+.pink-theme .highlight:hover {
+    background-color: #ff66b2;
+}
+
+/* センターエリア（4,4 ~ 6,6）の配色 */
+.pink-theme .center-area {
+    background-color: #ffb3d9;
+}
+
+.pink-theme .center-area-center {
+    background-color: #ff66b2; /* センターだけ濃いめのピンク */
+}
