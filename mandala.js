@@ -1,6 +1,5 @@
 
 let breadcrumb = ["ADLチャート"]; // パンくずリストの初期化
-
 let chartsData = {};
 
 fetch('data.json')
@@ -11,7 +10,6 @@ fetch('data.json')
         createMandalaChart('mandalaContainer', 'ADLチャート');
     })
     .catch(error => console.error('Error loading JSON data:', error));
-
 
 function updateBreadcrumb() {
     const breadcrumbContainer = document.querySelector('.breadcrumb');
@@ -35,6 +33,7 @@ function updateBreadcrumb() {
         breadcrumbContainer.appendChild(li);
     });
 }
+
 function createMandalaChart(containerId, chartName) {
     const container = document.getElementById(containerId);
     
